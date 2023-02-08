@@ -1,5 +1,5 @@
 NAME = libft.a
-SRC = ft_putchar.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c  ft_strlcpy.c  ft_strlcat.c  ft_strlen.c  ft_strncmp.c ft_strrchr.c  ft_tolower.c  ft_toupper.c ft_memcmp.c
+SRC = $Sft_bzero.c $Sft_isalnum.c $Sft_isalpha.c $Sft_isascii.c $Sft_isdigit.c $Sft_isprint.c $Sft_memchr.c $Sft_memcpy.c $Sft_memmove.c $Sft_memset.c $Sft_strchr.c  $Sft_strlcpy.c  $Sft_strlcat.c  $Sft_strlen.c  $Sft_strncmp.c $Sft_strrchr.c  $Sft_tolower.c  $Sft_toupper.c $Sft_memcmp.c
 OBJ_DIR = obj
 OBJ	= $(addprefix ${OBJ_DIR}/, ${SRC:%.c=%.o})
 
@@ -22,4 +22,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean rebash -c "$(curl -fsSL https://raw.github.com/xicodomingues/francinette/master/bin/update.sh)"

@@ -1,25 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmartin- <pmartin-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 19:03:09 by pmartin-          #+#    #+#             */
-/*   Updated: 2023/01/29 20:46:18 by pmartin-         ###   ########.fr       */
+/*   Created: 2023/01/30 01:01:26 by pmartin-          #+#    #+#             */
+/*   Updated: 2023/01/30 01:41:52 by pmartin-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*ptr;
+	unsigned int	i;
+	int				j;
+	int				s2_len;
 
 	i = 0;
-	ptr = (unsigned char *) b;
-	while (i < len)
-		ptr[i++] = (unsigned char) c;
-	return (b);
+	s2_len = ft_strlen(s2);
+	if (!s1 && n == 0)
+		return (0);
+	if (!s2_len)
+		return ((char *)(s1));
+	while (s1[i] && i < n)
+	{
+		if (s1[i] == s2[0])
+		{
+			j = 0;
+			while (s2[j] != '\0' && s1[i + j] == s2[j] && ((i + j) < n))
+			{
+				if (s2[j + 1] == '\0')
+					return ((char *)(s1 + i));
+				j++;
+			}
+		}
+		i++;
+	}
+	return (NULL);
 }
